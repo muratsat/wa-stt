@@ -22,6 +22,8 @@ export const handleWebhook = async (body: unknown) => {
     return;
   }
 
+  console.log(`Received message from ${chatId}`);
+
   if (payload.dataType === "media") {
     const text = await speechToText(
       payload.data.messageMedia.data,
